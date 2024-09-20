@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayan's Smart Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/google-icons.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="dashboard">
+
+      <div class="left-panel"> <!-- LEFT PANEL -->
+        <div class="widget" id="weather-widget"> <!-- Weather Widget -->
+          <h2>Weather</h2>
+        </div>
+        <div class="widget" id="news-widget">  <!-- News Widget -->
+          <h2>API Not Updated</h2>
+          <h3>China looks for domestic Nvidia rival</h3>
+            <div class="cont" id="cont">
+                <p>Chinese firms face a number of challenges in trying to rival Nvidia including contending with U.S. export restrictions and a lack of tech expertise.</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&size=400x400&data=https://www.cnbc.com/2024/09/19/china-looks-for-domestic-nvidia-rival-but-thats-proving-challenging.html" alt="News Placeholder", style="max-width: 100%; max-height: 100%;">
+            </div>
+        </div>
+        <div class="widget" id="stocks-widget">  <!-- Stocks Widget -->
+          <h2>Stocks</h2>
+          <img src="https://via.placeholder.com/150" alt="Stocks Placeholder">
+        </div>
+      </div>
+  
+
+
+      <div class="center-panel"> <!-- CENTER PANEL -->
+        <div class="large-widget" id="time-widget">  <!-- Main Time -->
+            <h1>12:00 PM</h1>
+        </div>
+        <div class="date" id="date">  <!-- Date Widget -->
+            <h1>the date lol</h1>
+        </div>
+
+         <!-- Gemini Integration - Part of center panel -->
+        <div class="widget" id="extra-text-widget" style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));">
+          <h2>Other Text Box</h2>
+          <p>Placeholder text for extra information.</p>
+        </div>
+
+      </div>
+  
+
+      
+      <div class="right-panel"> <!-- RIGHT PANEL -->
+        <div class="widget" id="todo-widget">  <!-- Todoist Widget -->
+          <h2>Tasks (Todoist)</h2>
+          <ul>
+            <li>Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+          </ul>
+        </div>
+        <div class="widget" id="smart-home-widget">  <!-- Smart Home Widgets -->
+          <h2>Smart Home Devices</h2>
+          <ul>
+            <li>Device 1 Status</li>
+            <li>Device 2 Status</li>
+            <li>Device 3 Status</li>
+            <li>Device 4 Status</li>
+            <li>Device 5 Status</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!--JS Script initilizaiton-->
+    <script src='JS Widgets/weather.js'></script>
+    <script src='JS Widgets/time.js'></script>
+    <script src='JS Widgets/news.js'></script>
+
+
+  </body>
+  </html>
+  
