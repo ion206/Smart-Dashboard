@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- git commit -m "initial commit" -->
+<!-- git push origin main -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,8 +19,27 @@
 
       <div class="left-panel"> <!-- LEFT PANEL -->
         <div class="widget" id="weather-widget"> <!-- Weather Widget -->
-          <h2>Weather</h2>
-        </div>
+          <h2 style="font-size: 25px">Weather in CITY</h2>
+          <h3 style="font-size: 60px; font-weight: bold">69<span style="vertical-align: top; font-size: 35px">°F</span> <span style="vertical-align: -20%;font-size: 90px"; class="material-symbols-outlined">sunny</span></h3>
+          <div class="forecasts">
+            <div class="hour">
+              <h4>4 PM</h4>
+              <h5>77</h4>
+            </div>
+            <div class="hour">
+              <h4>5 PM</h4>
+              <h5>77</h4>
+            </div>
+            <div class="hour">
+              <h4>6 PM</h4>
+              <h5>77</h4>
+            </div>
+            <div class="hour">
+              <h4>7 PM</h4>
+              <h5>77</h4>
+            </div>
+          </div>
+         </div>
         <div class="widget" id="news-widget">  <!-- News Widget -->
           <h2>API Not Updated</h2>
           <h3>China looks for domestic Nvidia rival</h3>
@@ -33,8 +54,6 @@
         </div>
       </div>
   
-
-
       <div class="center-panel"> <!-- CENTER PANEL -->
         <div class="large-widget" id="time-widget">  <!-- Main Time -->
             <h1>12:00 PM</h1>
@@ -46,7 +65,11 @@
          <!-- Gemini Integration - Part of center panel -->
         <div class="widget" id="extra-text-widget" style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));">
           <h2>Other Text Box</h2>
-          <p>Placeholder text for extra information.</p>
+          <button id='start'>Start</button>
+          <button id='stop'>stop</button>
+
+          <p id='result'>Placeholder text for extra information.</p>
+          <p id= 'gemini'> PLS WORK PLS WORK PLS WORK</p>
         </div>
 
       </div>
@@ -80,6 +103,7 @@
     <script src='JS Widgets/weather.js'></script>
     <script src='JS Widgets/time.js'></script>
     <script src='JS Widgets/news.js'></script>
+    <script src='JS Widgets/transcribe.js'></script>
 
 
   </body>
