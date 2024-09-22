@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- git commit -m "initial commit" -->
+<!-- git commit -a -m "initial commit" -->
 <!-- git push origin main -->
 <html lang="en">
 <head>
@@ -24,19 +24,19 @@
           <div class="forecasts">
             <div class="hour">
               <h4>4 PM</h4>
-              <h5>77</h4>
+              <h5>77</h5>
             </div>
             <div class="hour">
               <h4>5 PM</h4>
-              <h5>77</h4>
+              <h5>77</h5>
             </div>
             <div class="hour">
               <h4>6 PM</h4>
-              <h5>77</h4>
+              <h5>77</h5>
             </div>
             <div class="hour">
               <h4>7 PM</h4>
-              <h5>77</h4>
+              <h5>77</h5>
             </div>
           </div>
          </div>
@@ -65,11 +65,13 @@
          <!-- Gemini Integration - Part of center panel -->
         <div class="widget" id="extra-text-widget" style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));">
           <h2>Other Text Box</h2>
+          <div class= "buttons">
           <button id='start'>Start</button>
           <button id='stop'>stop</button>
+          </div>
 
-          <p id='result'>Placeholder text for extra information.</p>
-          <p id= 'gemini'> PLS WORK PLS WORK PLS WORK</p>
+          <h6 id='result'>Voice Input Display</h6>
+          <h6 id= 'gemini'> Gemini Response Area</h6>
         </div>
 
       </div>
@@ -99,11 +101,56 @@
     </div>
 
 
+
+    <!-- Gemini Integration Backend-->
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+      //Speech to text code
+      var startButton = document.getElementById('start');
+			var stopButton = document.getElementById('stop');
+			var resultElement = document.getElementById('result');
+      var gemElement = document.getElementById('gemini');
+      var result = ""
+
+			var recognition = new webkitSpeechRecognition();
+
+			recognition.lang = window.navigator.language;
+			recognition.interimResults = true;
+
+			startButton.addEventListener('click', () => { recognition.start(); });
+			stopButton.addEventListener('click', () => { recognition.stop(); gem(); });
+
+			recognition.addEventListener('result', (event) => {
+				result = event.results[event.results.length - 1][0].transcript;
+				resultElement.textContent = result;
+			});
+      //Gemini Code
+
+      async function gem(){
+        const genAI = new GoogleGenerativeAI("AIzaSyBRO2Cx_q33x6pJLSh5tYcbs8rEA2znpjc");
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        const prompt = result;
+        console.log("gemini running");
+        const answer = await model.generateContent(prompt);
+        const response = await answer.response;
+        const content = response.text();
+        gemElement.textContent = content;
+      }
+  </script>
+
+
     <!--JS Script initilizaiton-->
     <script src='JS Widgets/weather.js'></script>
     <script src='JS Widgets/time.js'></script>
     <script src='JS Widgets/news.js'></script>
-    <script src='JS Widgets/transcribe.js'></script>
 
 
   </body>

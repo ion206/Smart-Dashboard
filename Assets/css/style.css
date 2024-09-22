@@ -26,7 +26,12 @@
     width: 95vw;
     height: 90vh;
   }
-  
+  .buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    height: 50px;
+    gap: 10px;
+  }
   .widget {
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
     padding: 10px;
@@ -123,4 +128,8 @@
 
   h5{
     font-size: 20px;
+  }
+  h6{
+    text-align: center;
+    font-size: larger;
   }
